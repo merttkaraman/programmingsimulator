@@ -45,6 +45,6 @@ This project is licensed under the MIT License.
 **Screenshot:**
 
 
-<img src="/appimg" width="auto">
+<img src="https://github.com/merttkaraman/programmingsimulator/blob/main/appimg.png" width="750" height="500">
 
  
