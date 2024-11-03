@@ -1,7 +1,6 @@
-/* Genel stil */
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #eee; /* Açık gri arka plan */
+  background-color: #eee; 
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -9,20 +8,20 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  overflow: hidden; /* Kar taneleri taşmasını engeller */
+  overflow: hidden; 
 }
 
 .container {
   text-align: center;
-  position: relative; /* Monitör çerçevesi için gerekli */
+  position: relative; 
   width: 80%;
   max-width: 800px;
   padding: 20px;
-  background-color: #111; /* Monitör ekran rengi */
+  background-color: #111; 
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Monitör gölgesi */
-  margin-bottom: 50px; /* Kapatma butonu için alt kenar boşluğu */
-  z-index: 1; /* Kar tanelerinin arkasında kalmasını sağlar */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); 
+  margin-bottom: 50px; 
+  z-index: 1; 
 }
 
 .container::before {
@@ -32,18 +31,17 @@ body {
   left: -20px;
   right: -20px;
   bottom: -20px;
-  border: 10px solid #333; /* Monitör çerçevesi */
+  border: 10px solid #333; 
   border-radius: 20px;
-  z-index: -1; /* Çerçevenin içeriğin arkasında kalmasını sağlar */
+  z-index: -1; 
 }
 
 h1 {
   font-size: 3em;
   margin-bottom: 20px;
-  color: #2ECC71; /* Parlak yeşil başlık */
+  color: #2ECC71; 
 }
 
-/* Switch stilleri */
 .switch-container {
   display: flex;
   flex-direction: column;
@@ -62,7 +60,7 @@ h1 {
   width: 40px;
   border-radius: 20px;
   cursor: pointer;
-  background: #555; /* Koyu gri slider */
+  background: #555; 
   transition: background-color 0.3s ease-in-out;
 }
 
@@ -74,7 +72,7 @@ h1 {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #2ECC71; /* Parlak yeşil böcek */
+  background: #2ECC71; 
   transition: transform 0.3s ease-in-out;
 }
 
@@ -83,7 +81,7 @@ h1 {
 }
 
 .switch .input:checked + .slider {
-  background-color: #27AE60; /* Koyu yeşil slider (aktif) */
+  background-color: #27AE60; 
 }
 
 .switch .input:checked + .slider:before {
@@ -93,29 +91,29 @@ h1 {
 .switch .label {
   margin-left: 10px;
   font-size: 1.2em;
-  color: #2ECC71; /* Parlak yeşil etiket */
-  display: flex; /* Flexbox kullanarak ikon ve metni yan yana hizala */
-  align-items: center; /* İkon ve metni dikey olarak ortala */
+  color: #2ECC71; 
+  display: flex; 
+  align-items: center; 
 }
 
 .switch .label::before {
-  content: '🐛'; /* Böcek ikonunu ekle */
-  margin-right: 5px; /* İkon ve metin arasına boşluk ekle */
-  font-size: 1.5em; /* İkon boyutunu ayarla */
+  content: '🐛'; 
+  margin-right: 5px; 
+  font-size: 1.5em; 
 }
 
 #kapatma-butonu {
-  position: fixed; /* Çerçevenin dışında kalması için fixed */
+  position: fixed; 
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #f00; /* Kırmızı buton */
+  background-color: #f00; 
   color: #fff;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  z-index: 2; /* Kar tanelerinin önünde kalmasını sağlar */
+  z-index: 2; 
 }
 
 #problem-solved {
@@ -124,11 +122,10 @@ h1 {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 3em;
-  color: #2ECC71; /* Yeşil yazı */
-  z-index: 1; /* Kar tanelerinin arkasında kalmasını sağlar */
+  color: #2ECC71; 
+  z-index: 1; 
 }
 
-/* Kapanış animasyonu */
 .kapaniyor {
   animation: kapanis 1s ease-in-out forwards;
 }
@@ -140,21 +137,20 @@ h1 {
   }
 }
 
-/* Kar efekti */
 .kar {
   position: absolute;
   width: 10px;
   height: 10px;
   top: -10px;
-  opacity: 0; /* Başlangıçta görünmez */
-  animation: kar-dusmesi 0.01s linear infinite; /* Kar düşme animasyonu */
-  z-index: 0; /* İçeriğin ve diğer elementlerin arkasında kalmasını sağlar */
-  font-size: 1.5em; /* İkon boyutunu ayarladık */
+  opacity: 0; 
+  animation: kar-dusmesi 0.01s linear infinite; 
+  z-index: 0; 
+  font-size: 1.5em; 
 }
 
 .kar::before {
-  content: '🐛'; /* Böcek ikonunu ekledik */
-  color: #2ECC71; /* Yeşil böcek rengi */
+  content: '🐛'; 
+  color: #2ECC71; 
 }
 
 @keyframes kar-dusmesi {
@@ -163,13 +159,11 @@ h1 {
     opacity: 0;
   }
   100% {
-    transform: translate(500px, 200vh); /* Daha fazla sağa hareket etmesi için 500px yaptık */
+    transform: translate(500px, 200vh); 
     opacity: 1; 
   }
 }
 
-/* Farklı kar taneleri için animasyon gecikmesi */
 .kar:nth-child(1) { animation-delay: 0s; }
 .kar:nth-child(2) { animation-delay: 2s; }
 .kar:nth-child(3) { animation-delay: 4s; }
-/* ... (daha fazla kar tanesi için ekleyebilirsiniz) ... */ 
