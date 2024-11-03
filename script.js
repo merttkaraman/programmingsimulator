@@ -8,8 +8,7 @@ for (var i = 0; i < checkboxes.length; i++) {
 
 function updateBugs(changedElement) {
     var checkedCount = document.querySelectorAll('input:checked').length;
-
-    // No bugs, thats impossible!
+    
     if (checkedCount === 0) {
         turnOnRandomBug(changedElement);
         if (Math.random() > 0.85) {
@@ -36,7 +35,6 @@ setTimeout(function () {
 }, 400);
 
 
-// Kapatma butonu işlevi
 const kapatmaButonu = document.getElementById("kapatma-butonu");
 const container = document.querySelector(".container");
 const problemSolved = document.getElementById("problem-solved");
@@ -50,18 +48,17 @@ kapatmaButonu.addEventListener("click", () => {
   }, 1000); 
 });
 
-// Kar efekti oluşturma
 function karEfektOlustur() {
-    const body = document.querySelector("body"); // body elementini seç
-    const karSayisi = 50; // İstediğiniz kar tanesi sayısı
+    const body = document.querySelector("body"); 
+    const karSayisi = 50; 
   
     for (let i = 0; i < karSayisi; i++) {
       const kar = document.createElement("div");
       kar.classList.add("kar");
-      kar.style.left = `${Math.random() * 100}%`; // Rastgele yatay konum
-      kar.style.animationDuration = `${Math.random() * 5 + 5}s`; // Rastgele düşme hızı
-      body.appendChild(kar); // Kar tanesini body'ye ekle
+      kar.style.left = `${Math.random() * 100}%`; 
+      kar.style.animationDuration = `${Math.random() * 5 + 5}s`; 
+      body.appendChild(kar); 
     }
   }
   
-  karEfektOlustur(); // Fonksiyonu çağırarak kar efektini başlat
+  karEfektOlustur(); 
